@@ -49,6 +49,33 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                         case "School":
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[3]);
                             break;
+                        case "Fire":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[5]);
+                            break;
+                        case "Cement":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[6]);
+                            break;
+                        case "Excavator":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[7]);
+                            break;
+                        case "E46":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[8]);
+                            break;
+                        case "E61":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[9]);
+                            break;
+                        case "Tractor":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[10]);
+                            break;
+                        case "B2":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[11]);
+                            break;
+                        case "Police":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[12]);
+                            break;
+                        case "Tractor2":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[13]);
+                            break;
                         default:
                             Debug.LogError("Unknown tag!");
                             break;
@@ -71,6 +98,33 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                         break;
                     case "School":
                         objectScript.schoolBus.GetComponent<RectTransform>().localPosition = objectScript.schoolBusPos;
+                        break;
+                    case "Fire":
+                        objectScript.fireTruck.GetComponent<RectTransform>().localPosition = objectScript.fireTruckPos;
+                        break;
+                    case "Cement":
+                        objectScript.cementTruck.GetComponent<RectTransform>().localPosition = objectScript.cementTruckPos;
+                        break;
+                    case "Excavator":
+                        objectScript.excavator.GetComponent<RectTransform>().localPosition = objectScript.excavatorPos;
+                        break;
+                    case "E46":
+                        objectScript.e46Car.GetComponent<RectTransform>().localPosition = objectScript.e46CarPos;
+                        break;
+                    case "E61":
+                        objectScript.e61Car.GetComponent<RectTransform>().localPosition = objectScript.e61CarPos;
+                        break;
+                    case "Tractor":
+                        objectScript.tractor.GetComponent<RectTransform>().localPosition = objectScript.tractorPos;
+                        break;
+                    case "B2":
+                        objectScript.b2Car.GetComponent<RectTransform>().localPosition = objectScript.b2CarPos;
+                        break;
+                    case "Police":
+                        objectScript.policeCar.GetComponent<RectTransform>().localPosition = objectScript.policeCarPos;
+                        break;
+                    case "Tractor2":
+                        objectScript.tractor2.GetComponent<RectTransform>().localPosition = objectScript.tractor2Pos;
                         break;
                     default:
                         Debug.LogError("Unknown tag!");
