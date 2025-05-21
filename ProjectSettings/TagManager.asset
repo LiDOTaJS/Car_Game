@@ -16,6 +16,10 @@ TagManager:
   - B2
   - Police
   - Tractor2
+  - YellowCar
+  - Truck
+  - Formula
+  - Tank
   layers:
   - Default
   - TransparentFX
