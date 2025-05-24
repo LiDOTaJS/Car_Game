@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PlaceScript : MonoBehaviour, IDropHandler
+public class PlaceScriptTwo : MonoBehaviour, IDropHandler
 {
 
     private float placeZRotation, carZRotation, difZRotation;
     private Vector2 placeSize, carSize;
     private float xSizeDif, ySizeDif;
-    public ObjectScript objectScript;
+    public ObjectScriptTwo objectScript;
     public void OnDrop(PointerEventData eventData)
     {
         if ((eventData.pointerDrag != null) && Input.GetMouseButtonUp(0) && Input.GetMouseButton(2) == false)
@@ -41,42 +41,27 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                     switch (eventData.pointerDrag.tag)
                     {
 
-                        //1. Limenis
-                        case "Garbage":
+                        //2. Limenis
+                        case "YellowCar":
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[2]);
                             break;
-                        case "Medic":
-                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[4]);
-                            break;
-                        case "School":
+                        case "Truck":
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[3]);
                             break;
-                        case "Fire":
+                        case "Formula":
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[4]);
+                            break;
+                        case "Tank":
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[5]);
                             break;
-                        case "Cement":
+                        case "Bike":
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[6]);
                             break;
-                        case "Excavator":
+                        case "Lawn":
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[7]);
                             break;
-                        case "E46":
+                        case "JetSki":
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[8]);
-                            break;
-                        case "E61":
-                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[9]);
-                            break;
-                        case "Tractor":
-                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[10]);
-                            break;
-                        case "B2":
-                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[11]);
-                            break;
-                        case "Police":
-                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[12]);
-                            break;
-                        case "Tractor2":
-                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[13]);
                             break;
                     }
                     // --- NEW: increment placed count only once per object
@@ -90,6 +75,8 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                         {
                             // your TimerScript.StopTimer() freezes the display
                             objectScript.timerScript.StopTimer();
+                            // show the winning window + stars + time
+                            objectScript.winManager.ShowWinWindow();
                         }
                     }
                     return;
@@ -105,42 +92,27 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                 switch (eventData.pointerDrag.tag)
                 {
 
-                    //1. Limenis
-                    case "Garbage":
-                        objectScript.garbageTruck.GetComponent<RectTransform>().localPosition = objectScript.garbageTruckPos;
+                    //2. Limenis
+                    case "YellowCar":
+                        objectScript.yellowCar.GetComponent<RectTransform>().localPosition = objectScript.yellowCarPos;
                         break;
-                    case "Medic":
-                        objectScript.ambulance.GetComponent<RectTransform>().localPosition = objectScript.ambulancePos;
+                    case "Truck":
+                        objectScript.redTruck.GetComponent<RectTransform>().localPosition = objectScript.redTruckPos;
                         break;
-                    case "School":
-                        objectScript.schoolBus.GetComponent<RectTransform>().localPosition = objectScript.schoolBusPos;
+                    case "Formula":
+                        objectScript.formula.GetComponent<RectTransform>().localPosition = objectScript.formulaPos;
                         break;
-                    case "Fire":
-                        objectScript.fireTruck.GetComponent<RectTransform>().localPosition = objectScript.fireTruckPos;
+                    case "Tank":
+                        objectScript.tank.GetComponent<RectTransform>().localPosition = objectScript.tankPos;
                         break;
-                    case "Cement":
-                        objectScript.cementTruck.GetComponent<RectTransform>().localPosition = objectScript.cementTruckPos;
+                    case "Bike":
+                        objectScript.motorcycle.GetComponent<RectTransform>().localPosition = objectScript.motorcyclePos;
                         break;
-                    case "Excavator":
-                        objectScript.excavator.GetComponent<RectTransform>().localPosition = objectScript.excavatorPos;
+                    case "Lawn":
+                        objectScript.lawnMower.GetComponent<RectTransform>().localPosition = objectScript.lawnMowerPos;
                         break;
-                    case "E46":
-                        objectScript.e46Car.GetComponent<RectTransform>().localPosition = objectScript.e46CarPos;
-                        break;
-                    case "E61":
-                        objectScript.e61Car.GetComponent<RectTransform>().localPosition = objectScript.e61CarPos;
-                        break;
-                    case "Tractor":
-                        objectScript.tractor.GetComponent<RectTransform>().localPosition = objectScript.tractorPos;
-                        break;
-                    case "B2":
-                        objectScript.b2Car.GetComponent<RectTransform>().localPosition = objectScript.b2CarPos;
-                        break;
-                    case "Police":
-                        objectScript.policeCar.GetComponent<RectTransform>().localPosition = objectScript.policeCarPos;
-                        break;
-                    case "Tractor2":
-                        objectScript.tractor2.GetComponent<RectTransform>().localPosition = objectScript.tractor2Pos;
+                    case "JetSki":
+                        objectScript.jetSki.GetComponent<RectTransform>().localPosition = objectScript.jetSkiPos;
                         break;
                     default:
                         Debug.LogError("Unknown tag!");

@@ -20,6 +20,9 @@ TagManager:
   - Truck
   - Formula
   - Tank
+  - Bike
+  - Lawn
+  - JetSki
   layers:
   - Default
   - TransparentFX
