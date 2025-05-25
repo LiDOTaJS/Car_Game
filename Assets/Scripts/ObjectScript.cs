@@ -43,6 +43,7 @@ public class ObjectScript : MonoBehaviour {
     // NEW: reference to your TimerScript
     public TimerScript timerScript;
 
+    public WinnerScript winManager;
     void Start()
     {
         // record original positions
@@ -64,6 +65,9 @@ public class ObjectScript : MonoBehaviour {
 
         // NEW: find the TimerScript in scene
         timerScript = FindObjectOfType<TimerScript>();
+
+        if (winManager == null)
+            winManager = FindObjectOfType<WinnerScript>();
     }
 
 }

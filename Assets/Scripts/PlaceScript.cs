@@ -90,6 +90,7 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                         {
                             // your TimerScript.StopTimer() freezes the display
                             objectScript.timerScript.StopTimer();
+                            objectScript.winManager.ShowWinWindow();
                         }
                     }
                     return;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class WinnerScriptTwo : MonoBehaviour
+public class WinnerScript : MonoBehaviour
 {
     [Header("UI Elements (assign in Inspector)")]
     public GameObject backgroundWindow;
@@ -34,7 +34,7 @@ public class WinnerScriptTwo : MonoBehaviour
 
         // display window
         backgroundWindow.SetActive(true);
-
+        backgroundWindow.transform.SetAsLastSibling();
         // show the time string from your timer
         timerResult.text = "Laiks: " + timerScript.timerText.text;
 

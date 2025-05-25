@@ -42,7 +42,7 @@ public class ObjectScriptTwo : MonoBehaviour
     // NEW: reference to your TimerScript
     public TimerScript timerScript;
 
-    public WinnerScriptTwo winManager;
+    public WinnerScript winManager;
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +64,7 @@ public class ObjectScriptTwo : MonoBehaviour
         timerScript = FindObjectOfType<TimerScript>();
 
         if (winManager == null)
-            winManager = FindObjectOfType<WinnerScriptTwo>();
+            winManager = FindObjectOfType<WinnerScript>();
     }
 
 }
