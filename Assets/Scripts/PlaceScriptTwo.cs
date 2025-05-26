@@ -24,8 +24,9 @@ public class PlaceScriptTwo : MonoBehaviour, IDropHandler
 
                 placeSize = eventData.pointerDrag.GetComponent<RectTransform>().localScale;
                 carSize = GetComponent<RectTransform>().localScale;
-                xSizeDif = Mathf.Abs(placeSize.x - carSize.x);
-                ySizeDif = Mathf.Abs(placeSize.y - carSize.y);
+                xSizeDif = Mathf.Abs(Mathf.Abs(placeSize.x) - Mathf.Abs(carSize.x));
+                ySizeDif = Mathf.Abs(Mathf.Abs(placeSize.y) - Mathf.Abs(carSize.y));
+
                 Debug.Log("Dif X Size: " + xSizeDif + "\nDif Y Size: " + ySizeDif);
 
                 if ((difZRotation <= 10 || (difZRotation >= 350 && difZRotation <= 360)) && (xSizeDif <= 0.3 && ySizeDif <= 0.3))
@@ -64,18 +65,18 @@ public class PlaceScriptTwo : MonoBehaviour, IDropHandler
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[8]);
                             break;
                     }
-                    // --- NEW: increment placed count only once per object
+                    // palielina novietoto objektu skaitu tikai vienreiz katram objektam
                     if (objectScript.lastDragged != eventData.pointerDrag)
                     {
                         objectScript.placedCount++;
                         objectScript.lastDragged = eventData.pointerDrag;
 
-                        // if we've placed them all, stop the timer
+                        // Ja visi objekti ir novietoti, apstādina taimeri
                         if (objectScript.placedCount >= objectScript.totalObjects)
                         {
-                            // your TimerScript.StopTimer() freezes the display
+                            // // TimerScript.StopTimer() apstādina taimeri
                             objectScript.timerScript.StopTimer();
-                            // show the winning window + stars + time
+                            // Rāda uzvaras logu
                             objectScript.winManager.ShowWinWindow();
                         }
                     }

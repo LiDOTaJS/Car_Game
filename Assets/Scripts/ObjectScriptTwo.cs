@@ -35,11 +35,11 @@ public class ObjectScriptTwo : MonoBehaviour
     public bool rightPlace = false;
     public GameObject lastDragged = null;
 
-    // NEW: count how many unique objects have been placed
+    // skaita, cik objekti ir pareizi novietoti
     [HideInInspector] public int placedCount = 0;
     public int totalObjects;
 
-    // NEW: reference to your TimerScript
+    // atsauce uz TimerScript (taimeri)
     public TimerScript timerScript;
 
     public WinnerScript winManager;
@@ -57,10 +57,10 @@ public class ObjectScriptTwo : MonoBehaviour
         lawnMowerPos = lawnMower.GetComponent<RectTransform>().localPosition;
         jetSkiPos = jetSki.GetComponent<RectTransform>().localPosition;
 
-        // NEW: calculate total draggables (you have 7)
+        // aprēķina kopējo objektu skaitu
         totalObjects = 7;
 
-        // NEW: find the TimerScript in scene
+        // atrod TimerScript objektu ainā
         timerScript = FindObjectOfType<TimerScript>();
 
         if (winManager == null)

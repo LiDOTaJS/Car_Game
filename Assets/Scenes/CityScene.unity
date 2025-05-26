@@ -1539,7 +1539,7 @@ MonoBehaviour:
   star3: {fileID: 500421715}
   timerResult: {fileID: 1119520855}
   threeStarTime: 30
-  twoStarTime: 60
+  twoStarTime: 45
 --- !u!1 &891184587
 GameObject:
   m_ObjectHideFlags: 0

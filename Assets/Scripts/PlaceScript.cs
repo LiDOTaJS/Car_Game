@@ -28,6 +28,7 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                 ySizeDif = Mathf.Abs(placeSize.y - carSize.y);
                 Debug.Log("Dif X Size: " + xSizeDif + "\nDif Y Size: " + ySizeDif);
 
+                // Pārbauda, vai rotācija un izmērs ir pieņemamā diapazonā
                 if ((difZRotation <= 10 || (difZRotation >= 350 && difZRotation <= 360)) && (xSizeDif <= 0.3 && ySizeDif <= 0.3))
                 {
                     Debug.Log("Right Place");
@@ -79,16 +80,16 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[13]);
                             break;
                     }
-                    // --- NEW: increment placed count only once per object
+                    // palielina novietoto objektu skaitu tikai vienreiz katram objektam
                     if (objectScript.lastDragged != eventData.pointerDrag)
                     {
                         objectScript.placedCount++;
                         objectScript.lastDragged = eventData.pointerDrag;
 
-                        // if we've placed them all, stop the timer
+                        // Ja visi objekti ir novietoti, apstādina taimeri
                         if (objectScript.placedCount >= objectScript.totalObjects)
                         {
-                            // your TimerScript.StopTimer() freezes the display
+                            // TimerScript.StopTimer() apstādina taimeri
                             objectScript.timerScript.StopTimer();
                             objectScript.winManager.ShowWinWindow();
                         }
