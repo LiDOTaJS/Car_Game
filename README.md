@@ -20,13 +20,13 @@ Otrais Unity 2D projekts.
     Spēlētājs var vilkt attēlus no izvēlnes uz spēles laukumu.
 
 - **Rotācija🔄**
-    Attēlus var pagriezt, lai tie pareizi ieguļas mērķa formās
+    (Z un X): Attēlus var pagriezt, lai tie pareizi ieguļas mērķa formās.
 
 - **Invertēšana🔀**
-    Iespējams apgriezt attēlu horizontāli.
+    (C): Iespējams apgriezt attēlu horizontāli.
 
 - **Mērogošana↕️↔️**
-    Pielāgo attēla izmēru, lai tas atbilstu mērķa formai.
+    (←, ↑, → , ↓): Pielāgo attēla izmēru, lai tas atbilstu mērķa formai.
 
 ## Līmeņu sistēma un taimeris🏆
 - **Taimeris⏱️**
